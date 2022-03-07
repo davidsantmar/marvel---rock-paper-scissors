@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Marvel";
+  src: url('./Marvel.ttf');
+}
+.App {
+  text-align: center;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Logo {
+  background-image: url('./images/Logo.png');
+}
+.score{
+  width: 20rem;
+}
+
+
