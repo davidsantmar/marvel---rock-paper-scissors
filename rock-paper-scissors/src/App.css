@@ -9,12 +9,45 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 2rem;
 }
 .Logo {
-  background-image: url('./images/Logo.png');
+  background: url('./images/Logo.png');
+  background-repeat: no-repeat;
+  width: 20rem;
 }
 .score{
   width: 20rem;
+}
+.arena{
+  display: flex;
+  justify-content: space-between;
+}
+.player--container{
+  border-radius: 5px;
+  border: solid 1px black;
+  width: 25rem;
+  height: 25rem;
+  margin: 2rem;
+}
+.result--container{
+  border-radius: 5px;
+  width: 25rem;
+  height: 25rem;
+  margin: 2rem;
+}
+.computer--container{
+  border-radius: 5px;
+  border: solid 1px black;
+  width: 25rem;
+  height: 25rem;
+  margin: 2rem;
+}
+.footer--container{
+  width: 38rem;
+}
+footer{
+  font-size: 1rem;
 }
 
 
