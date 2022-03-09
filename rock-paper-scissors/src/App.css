@@ -17,6 +17,13 @@
   background-repeat: no-repeat;
   width: 20rem;
 }
+.subtitle{
+  font-size: 1rem;
+}
+.choose--subtitle{
+  margin-top: 1rem;
+  font-size: 2rem;
+}
 .score{
   width: 20rem;
 }
