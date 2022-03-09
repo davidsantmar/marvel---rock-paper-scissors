@@ -4,6 +4,7 @@
 }
 .App {
   text-align: center;
+  font-family: 'Marvel';
 }
 .header{
   display: flex;
@@ -48,6 +49,9 @@
 }
 footer{
   font-size: 1rem;
+}
+.go--container{
+  color: red;
 }
 
 

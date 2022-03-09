@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className="footer--container">
+        <div className='footer--container'>
             <footer>
-                Made with &#10084;&#65039; by David SantiaGO!
+                MADE WITH &#10084;&#65039; BY DAVID SANTIA<span className='go--container'>GO</span>!
             </footer>
         </div>
     );

@@ -6,7 +6,6 @@ const Arena = () => {
             <div className='player--container'></div>
             <div className='result--container'></div>
             <div className='computer--container'></div>
-
         </div>
     );
 };
