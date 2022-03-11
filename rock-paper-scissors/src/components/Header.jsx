@@ -5,9 +5,8 @@ const Header = () => {
     return (
         <div className='header'>
             <div className="logo--container">
-                <img className='Logo' src={logo} alt='Logo'/>
+                <img className='logo' src={logo} alt='Logo'/>
                 <span className='subtitle'>ROCK PAPER SCISSORS</span>
-                <div className='choose--subtitle'>CHOOSE YOUR WEAPON</div>
             </div>
             <div className='score'>
                 SCORE

@@ -12,47 +12,85 @@
   justify-content: space-between;
   margin: 2rem;
 }
-.Logo {
+.logo {
   background: url('./images/Logo.png');
   background-repeat: no-repeat;
   width: 20rem;
 }
+.logo--container{
+  display: flex;
+  flex-direction: column;
+}
 .subtitle{
   font-size: 1rem;
-}
-.choose--subtitle{
-  margin-top: 1rem;
-  font-size: 2rem;
 }
 .score{
   width: 20rem;
 }
 .arena{
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  height: 30rem;
 }
 .player--container{
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+  border: solid 1px red;
+  width: 48rem;
+  height: 15rem;
+  margin: .1rem;
+}
+.rock--choose{
+  margin: 1rem;
+  width:14rem;
   border-radius: 5px;
   border: solid 1px black;
-  width: 25rem;
-  height: 25rem;
-  margin: 2rem;
+  background: url('./images/the-thing.jpeg');
+  background-repeat: no-repeat;
+}
+.paper--choose{
+  margin: 1rem;
+  width:14rem;
+  border-radius: 5px;
+  border: solid 2px black;
+  background: url('./images/ironman.png');
+  background-repeat: no-repeat;
+}
+.scissors--choose{
+  margin: 1rem;
+  width:14rem;
+  border-radius: 5px;
+  border: solid 1px black;
+  background: url('./images/wolverine.jpg');
+  background-repeat: no-repeat;
 }
 .result--container{
+  display: flex;
+  justify-content: center;
   border-radius: 5px;
-  width: 25rem;
-  height: 25rem;
-  margin: 2rem;
+  height: 2rem;
+  margin: 1rem;
+  font-size: 2rem;
+}
+.result__subtitle{
+  color: black;
 }
 .computer--container{
-  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+.computer__choose{
   border: solid 1px black;
-  width: 25rem;
-  height: 25rem;
-  margin: 2rem;
+  border-radius: 5px;
+  height: 10rem;
+  margin: .1rem;
+  width: 14rem;
 }
 .footer--container{
-  width: 38rem;
+  display: flex;
+  justify-content: center;
+  margin: 3rem;
 }
 footer{
   font-size: 1rem;
