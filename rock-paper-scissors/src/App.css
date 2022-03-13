@@ -13,7 +13,7 @@
   margin: 2rem;
 }
 .logo {
-  background: url('./images/Logo.png');
+  background: url('./images/logo.png');
   background-repeat: no-repeat;
   width: 20rem;
 }
@@ -86,6 +86,7 @@
   height: 10rem;
   margin: .1rem;
   width: 14rem;
+  background: url('./images/wolverine.jpg');
 }
 .footer--container{
   display: flex;
