@@ -1,24 +1,49 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Arena = () => {
     //const enemyImages = ['./images/ironman.png', './images/the-thing.jpeg', './images/wolverine.jpg'];
-    const [weapon, setWeapon] = useState('');
-    const [result, setResult] = useState('');
-    const [computer, setComputer] = useState('');
+    const [weapon, setWeapon] = useState();
+    const [result, setResult] = useState();
+    const [computer, setComputer] = useState();
 
-    function setEnemy(){
-        /*let randomNumber = Math.floor(Math.random()*3);
-        if (computer ===''){
-            if (randomNumber === 0) {setComputer(result);}
-            if (randomNumber === 1) {setComputer(result);}
-            if (randomNumber === 2) {setComputer(result);}
-        }
-        console.log(computer);*/
-        //setInterval(document.getElementById('computer__choose').innerHTML += ("Hello", 1000));
+    useEffect(() =>{
+        const newWeapon = weapon;
+        setResult(newWeapon);
+    }, [])
+    useEffect(() =>{
+        const newComputer= computer;
+        setResult(newComputer);
+    }, [])
+    useEffect(() =>{
+        const newResult = result;
+        setResult(newResult);
+    }, [])
+
+    function battle(){
+        let randomNumber = Math.floor(Math.random()*3);
+        if (randomNumber === 0) {setComputer('rock');}
+        if (randomNumber === 1) {setComputer('paper');}
+        if (randomNumber === 2) {setComputer('scissors');}
+
+        
+            if (weapon === computer){
+                setResult('DRAW');
+            }
+            if ((weapon === 'rock') && (computer === 'paper')){
+                setResult('YOU LOSE');
+                document.getElementById('result--container').style.color = 'red';
+            }
+            if ((weapon === 'rock') && (computer === 'scissors')){
+                setResult('YOU WIN');
+                document.getElementById('result--container').style.color = 'lightgreen';
+            } 
+       
     }
+    
+
+    //setInterval(document.getElementById('computer__choose').innerHTML += ("Hello", 1000));
     function chosenRock(){
-        setEnemyImages();
-        setEnemy();
+        //setEnemyImages();
         setWeapon('rock');
         if (weapon === ''){
             document.getElementById('rock--choose').style.border = 'solid 10px lightgreen';
@@ -36,32 +61,15 @@ const Arena = () => {
         if (weapon === ''){
             document.getElementById('scissors--choose').style.border = 'solid 10px lightgreen';
         }
-        setEnemy();
-    }
-    function show(){
-        console.log(computer)
-        console.log(weapon)
-    }
-    function battle(){
-        if (weapon === computer){
-            setResult('DRAW');
-        }
-        if ((weapon === 'rock') && (computer === 'paper')){
-            setResult('YOU LOSE');
-            document.getElementById('result--container').style.color = 'red';
-        }
-        if ((weapon === 'rock') && (computer === 'scissors')){
-            setResult('YOU WIN');
-            document.getElementById('result--container').style.color = 'lightgreen';
-        }
-        show();
     }
 
-    function setEnemyImages(){
+    /*function setEnemyImages(){
         document.getElementById('computer__choose')
         .style.background = "url('./images/wolverine.jpg')";
-    }
-
+    }*/
+    console.log(computer);
+    console.log(weapon);
+    console.log(result);
 
     return (
         <div className='arena'>
@@ -77,7 +85,7 @@ const Arena = () => {
             </div>
             <div className='computer--container'>
                 <div className='computer__choose' id='computer__choose'>
-                    
+                    {computer}
                 </div>
             </div>
         </div>
