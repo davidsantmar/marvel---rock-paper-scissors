@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
+//funciona pero analiza el resultado anterior, se muestra el resultado
+//anterior
+
 const Arena = () => {
     //const enemyImages = ['./images/ironman.png', './images/the-thing.jpeg', './images/wolverine.jpg'];
     const [weapon, setWeapon] = useState();
@@ -26,17 +29,17 @@ const Arena = () => {
         if (randomNumber === 2) {setComputer('scissors');}
 
         
-            if (weapon === computer){
-                setResult('DRAW');
-            }
-            if ((weapon === 'rock') && (computer === 'paper')){
-                setResult('YOU LOSE');
-                document.getElementById('result--container').style.color = 'red';
-            }
-            if ((weapon === 'rock') && (computer === 'scissors')){
-                setResult('YOU WIN');
-                document.getElementById('result--container').style.color = 'lightgreen';
-            } 
+        if (weapon === computer){
+            setResult('DRAW');
+        }
+        if ((weapon === 'rock') && (computer === 'paper')){
+            setResult('YOU LOSE');
+            document.getElementById('result--container').style.color = 'red';
+        }
+        if ((weapon === 'rock') && (computer === 'scissors')){
+            setResult('YOU WIN');
+            document.getElementById('result--container').style.color = 'lightgreen';
+        } 
        
     }
     
@@ -45,9 +48,8 @@ const Arena = () => {
     function chosenRock(){
         //setEnemyImages();
         setWeapon('rock');
-        if (weapon === ''){
             document.getElementById('rock--choose').style.border = 'solid 10px lightgreen';
-        }
+        
         battle();
     }
     function chosenPaper(){
