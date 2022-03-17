@@ -33,7 +33,12 @@ body{
   font-size: 1rem;
 }
 .score{
-  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+  background-color: white;
+  font-size: 2rem;
+  border-radius: 5px;
 }
 .arena{
   display: flex;

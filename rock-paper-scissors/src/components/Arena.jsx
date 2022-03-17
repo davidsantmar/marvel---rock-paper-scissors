@@ -8,6 +8,8 @@ const Arena = () => {
     const [weapon, setWeapon] = useState();
     const [result, setResult] = useState();
     const [computer, setComputer] = useState();
+    const [playerScore, setPlayerScore] = useState(0);
+    const [computerScore, setComputerScore] = useState(0);
 
     useEffect(() =>{
         const newWeapon = weapon;
@@ -28,19 +30,29 @@ const Arena = () => {
         if (randomNumber === 1) {setComputer('paper');}
         if (randomNumber === 2) {setComputer('scissors');}
 
-        
         if (weapon === computer){
             setResult('DRAW');
         }
         if ((weapon === 'rock') && (computer === 'paper')){
             setResult('YOU LOSE');
             document.getElementById('result--container').style.color = 'red';
+            setComputerScore(computerScore + 1);
         }
         if ((weapon === 'rock') && (computer === 'scissors')){
             setResult('YOU WIN');
             document.getElementById('result--container').style.color = 'lightgreen';
+            setPlayerScore(playerScore + 1);
         } 
-       
+        if (playerScore === 5){
+            setResult('YOU HAVE WON THE BATTLE');
+            setComputerScore(0);
+            setPlayerScore(0);
+        }
+        if (computerScore === 5){
+            setResult('COMPUTER HAS WON THE BATTLE');
+            setComputerScore(0);
+            setPlayerScore(0);
+        }
     }
     
 
