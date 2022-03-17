@@ -49,6 +49,7 @@ body{
   width: 100%;
   height: 15rem;
   margin: .1rem;
+  background-color: white;
 }
 .rock--choose{
   margin: 1rem;
@@ -84,10 +85,16 @@ body{
 }
 .result__subtitle{
   color: black;
+  font-size: 3rem;
+  background-color: white;
+  border-radius: 5px;
+  height: 3rem;
 }
 .computer--container{
   display: flex;
   justify-content: center;
+  margin-top: 2rem;
+
 }
 .computer__choose{
   border: solid 1px black;
@@ -104,6 +111,8 @@ body{
 }
 footer{
   font-size: 1rem;
+  border-radius: 5px;
+  background-color: white;
 }
 .go--container{
   color: red;
