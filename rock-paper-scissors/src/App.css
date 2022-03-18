@@ -35,11 +35,19 @@ body{
 }
 .score{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 10rem;
   background-color: white;
   font-size: 2rem;
   border-radius: 5px;
+}
+.player--score{
+  width: 10rem;
+  height: 2rem;
+}
+.computer--score{
+  width: 10rem;
+  height: 2rem;
 }
 .arena{
   display: flex;
