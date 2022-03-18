@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
 import computerScoreReducer from "./computerScoreReducer";
+import playerScoreReducer from "./playerScoreReducer";
 
 const rootReducer = combineReducers({
-  score: computerScoreReducer,
+  computerScore: computerScoreReducer,
+  playerScore: playerScoreReducer,
 });
 
 export default rootReducer;
