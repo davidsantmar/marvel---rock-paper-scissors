@@ -31,50 +31,73 @@ const Arena = () => {
         if (randomNumber === 2) {setComputer('scissors');}
 
         if (weapon === computer){
-            setResult('DRAW');
+            setResult(' DRAW ');
+            document.getElementById('result--container').style.backgroundColor = 'yellow';
         }
+        //rock
         if ((weapon === 'rock') && (computer === 'paper')){
-            setResult('YOU LOSE');
-            document.getElementById('result--container').style.color = 'red';
+            setResult(' YOU LOSE ');
+            document.getElementById('result--container').style.backgroundColor = 'red';
             setComputerScore(computerScore + 1);
         }
         if ((weapon === 'rock') && (computer === 'scissors')){
-            setResult('YOU WIN');
-            document.getElementById('result--container').style.color = 'lightgreen';
+            setResult(' YOU WIN ');
+            document.getElementById('result--container').style.backgroundColor = 'lightgreen';
             setPlayerScore(playerScore + 1);
         } 
+        //paper
+        if ((weapon === 'paper') && (computer === 'scissors')){
+            setResult(' YOU LOSE ');
+            document.getElementById('result--container').style.backgroundColor = 'red';
+            setComputerScore(computerScore + 1);
+        }
+        if ((weapon === 'paper') && (computer === 'rock')){
+            setResult(' YOU WIN ');
+            document.getElementById('result--container').style.backgroundColor = 'lightgreen';
+            setPlayerScore(playerScore + 1);
+        } 
+        //scissors
+        if ((weapon === 'scissors') && (computer === 'rock')){
+            setResult(' YOU LOSE ');
+            document.getElementById('result--container').style.backgroundColor = 'red';
+            setComputerScore(computerScore + 1);
+        }
+        if ((weapon === 'scissors') && (computer === 'paper')){
+            setResult(' YOU WIN ');
+            document.getElementById('result--container').style.backgroundColor = 'lightgreen';
+            setPlayerScore(playerScore + 1);
+        } 
+        //max-score
         if (playerScore === 5){
-            setResult('YOU HAVE WON THE BATTLE');
+            setResult(' YOU HAVE WON THE BATTLE ');
             setComputerScore(0);
             setPlayerScore(0);
+            document.getElementById('result--container').style.backgroundColor = 'lightgreen';
         }
         if (computerScore === 5){
-            setResult('COMPUTER HAS WON THE BATTLE');
+            setResult(' COMPUTER HAS WON THE BATTLE ');
             setComputerScore(0);
             setPlayerScore(0);
+            document.getElementById('result--container').style.backgroundColor = 'red';
         }
     }
     
 
     //setInterval(document.getElementById('computer__choose').innerHTML += ("Hello", 1000));
     function chosenRock(){
-        //setEnemyImages();
         setWeapon('rock');
-            document.getElementById('rock--choose').style.border = 'solid 10px lightgreen';
-        
+            document.getElementById('rock--choose').style.border = 'solid 10px lightgreen';        
         battle();
     }
     function chosenPaper(){
         setWeapon('paper');
-        if (weapon === ''){
             document.getElementById('paper--choose').style.border = 'solid 10px lightgreen';
-        }
+        battle();
     }
     function chosenScissors(){
         setWeapon('scissors');
-        if (weapon === ''){
             document.getElementById('scissors--choose').style.border = 'solid 10px lightgreen';
-        }
+        battle();
     }
 
     /*function setEnemyImages(){
@@ -94,7 +117,7 @@ const Arena = () => {
             </div>
             <div className='result--container'>
                 <div className='result__subtitle' id='result--container'>
-                    {result}
+                    {result}SCORE: {playerScore} - {computerScore}
                 </div>
             </div>
             <div className='computer--container'>
