@@ -6,3 +6,9 @@ export function playerWins() {
   };
 }
 
+export function playerReset() {
+  return {
+    type: playerScoreActionTypes.PLAYER_RESET,
+  };
+}
+

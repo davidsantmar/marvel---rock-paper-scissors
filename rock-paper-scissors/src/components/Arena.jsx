@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { computerWins } from '../redux/actions/computerScoreActionCreator';
-import { playerWins } from '../redux/actions/playerScoreActionCreator';
+import { computerWins, computerReset } from '../redux/actions/computerScoreActionCreator';
+import { playerWins, playerReset } from '../redux/actions/playerScoreActionCreator';
 //funciona pero analiza el resultado anterior, se muestra el resultado
 //anterior
 
@@ -74,10 +74,14 @@ const Arena = () => {
         if (playerScore === 5){
             setResult(' YOU HAVE WON THE BATTLE ');
             document.getElementById('result--container').style.backgroundColor = 'lightgreen';
+            dispatch(computerReset());
+            dispatch(playerReset());
         }
         if (computerScore === 5){
             setResult(' COMPUTER HAS WON THE BATTLE ');
             document.getElementById('result--container').style.backgroundColor = 'red';
+            dispatch(playerReset());
+            dispatch(computerReset());
         }
     }
     

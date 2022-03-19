@@ -6,3 +6,8 @@ export function computerWins() {
   };
 }
 
+export function computerReset() {
+  return {
+    type: computerScoreActionTypes.COMPUTER_RESET,
+  };
+}
