@@ -29,9 +29,18 @@ const Arena = () => {
 
     function battle(){
         let randomNumber = Math.floor(Math.random()*3);
-        if (randomNumber === 0) {setComputer('rock');}
-        if (randomNumber === 1) {setComputer('paper');}
-        if (randomNumber === 2) {setComputer('scissors');}
+        if (randomNumber === 0) {
+            setComputer('rock');
+            document.getElementById('computer__choose').className = 'rock';
+        }
+        if (randomNumber === 1) {
+            setComputer('paper');
+            document.getElementById('computer__choose').className = 'ironman';
+        }
+        if (randomNumber === 2) {
+            setComputer('scissors');
+            document.getElementById('computer__choose').className = 'wolverine';
+        }
 
         if (weapon === computer){
             setResult(' DRAW ');
@@ -72,16 +81,18 @@ const Arena = () => {
         } 
         //max-score
         if (playerScore === 5){
-            setResult(' YOU HAVE WON THE BATTLE ');
+            setResult('YOU HAVE WON THE BATTLE');
             document.getElementById('result--container').style.backgroundColor = 'lightgreen';
             dispatch(computerReset());
             dispatch(playerReset());
+            document.getElementById('computer__choose').className = 'logo';
         }
         if (computerScore === 5){
-            setResult(' COMPUTER HAS WON THE BATTLE ');
+            setResult('COMPUTER HAS WON THE BATTLE');
             document.getElementById('result--container').style.backgroundColor = 'red';
             dispatch(playerReset());
             dispatch(computerReset());
+            document.getElementById('computer__choose').className = 'logo';
         }
     }
     
@@ -129,10 +140,8 @@ const Arena = () => {
                     {result}
                 </div>
             </div>
-            <div className='computer--container'>
-                <div className='computer__choose' id='computer__choose'>
-                    {computer}
-                </div>
+            <div className='computer--container' id='computer--container'>
+                <div className='computer__choose' id='computer__choose'></div>
             </div>
         </div>
     );
