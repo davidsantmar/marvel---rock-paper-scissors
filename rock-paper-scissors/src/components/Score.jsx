@@ -7,11 +7,12 @@ function Score() {
   return (
       <>
       <div className='score'>
+        <span className='score--title'>SCORE</span>
         <div className='player--score'>
-          {playerScore}
+          HERO: {playerScore}
         </div>
         <div className='computer--score'>
-          {computerScore}
+          VILLAIN: {computerScore}
         </div>
       </div>
       </>

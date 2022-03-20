@@ -26,6 +26,10 @@ const Arena = () => {
         const newResult = result;
         setResult(newResult);
     })
+    function resetScore(){
+        dispatch(playerReset());
+        dispatch(computerReset());
+    }
 
     function battle(){
         let randomNumber = Math.floor(Math.random()*3);
@@ -35,11 +39,11 @@ const Arena = () => {
         }
         if (randomNumber === 1) {
             setComputer('paper');
-            document.getElementById('computer__choose').className = 'ironman';
+            document.getElementById('computer__choose').className = 'paper';
         }
         if (randomNumber === 2) {
             setComputer('scissors');
-            document.getElementById('computer__choose').className = 'wolverine';
+            document.getElementById('computer__choose').className = 'scissors';
         }
 
         if (weapon === computer){
@@ -83,16 +87,12 @@ const Arena = () => {
         if (playerScore === 5){
             setResult('YOU HAVE WON THE BATTLE');
             document.getElementById('result--container').style.backgroundColor = 'lightgreen';
-            dispatch(computerReset());
-            dispatch(playerReset());
-            document.getElementById('computer__choose').className = 'logo';
+            resetScore();
         }
         if (computerScore === 5){
             setResult('COMPUTER HAS WON THE BATTLE');
             document.getElementById('result--container').style.backgroundColor = 'red';
-            dispatch(playerReset());
-            dispatch(computerReset());
-            document.getElementById('computer__choose').className = 'logo';
+            resetScore();
         }
     }
     
@@ -131,9 +131,9 @@ const Arena = () => {
     return (
         <div className='arena'>
             <div className='player--container'>
-                <button className='rock--choose' id='rock--choose' onClick={chosenRock}></button>
-                <div className='paper--choose' id='paper--choose' onClick={chosenPaper}></div>
-                <div className='scissors--choose' id='scissors--choose' onClick={chosenScissors}></div>
+                <button className='rock' id='rock--choose' onClick={chosenRock}></button>
+                <div className='paper' id='paper--choose' onClick={chosenPaper}></div>
+                <div className='scissors' id='scissors--choose' onClick={chosenScissors}></div>
             </div>
             <div className='result--container'>
                 <div className='result__subtitle' id='result--container'>
