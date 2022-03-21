@@ -53,6 +53,7 @@ body{
 .computer--score{
   width: 10rem;
   height: 2rem;
+  margin-bottom: .5rem;
 }
 .arena{
   display: flex;
@@ -125,6 +126,28 @@ footer{
 }
 .rock{
   background: url('./components/the-thing.jpeg');
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 14rem;
+  height: 10rem;
+}
+.rock--computer{
+  background: url('./components/doom.jpeg');
+  background-size: cover;
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 14rem;
+  height: 10rem;
+}
+.paper--computer{
+  background: url('./components/magneto.jpeg');
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 14rem;
+  height: 10rem;
+}
+.scissors--computer{
+  background: url('./components/octopus.jpg');
   border: solid 1px black;
   border-radius: 5px;
   width: 14rem;
