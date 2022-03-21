@@ -1,85 +1,93 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { computerWins, computerReset } from '../redux/actions/computerScoreActionCreator';
 import { playerWins, playerReset } from '../redux/actions/playerScoreActionCreator';
-//funciona pero analiza el resultado anterior, se muestra el resultado
-//anterior
+import { youLose, youWin, draw } from '../redux/actions/resultActionCreator';
+
+//funciona pero analiza el resultado mal
+//te da el resultado de la jugada anterior
 
 const Arena = () => {
     //const enemyImages = ['./images/ironman.png', './images/the-thing.jpeg', './images/wolverine.jpg'];
-    const [weapon, setWeapon] = useState();
+    const [weapon, setWeapon] = useState('');
     const [result, setResult] = useState();
     const [computer, setComputer] = useState();
     const computerScore = useSelector((state) => state.computerScore);
     const playerScore = useSelector((state) => state.playerScore);
+    const resultat = useSelector((state) => state.resultat);
     const dispatch = useDispatch();
 
     useEffect(() =>{
         const newWeapon = weapon;
         setResult(newWeapon);
-    })
+    }, [])
     useEffect(() =>{
         const newComputer= computer;
         setResult(newComputer);
-    })
-    useEffect(() =>{
-        const newResult = result;
-        setResult(newResult);
-    })
+    }, [])
+   
     function resetScore(){
         dispatch(playerReset());
         dispatch(computerReset());
     }
 
     function battle(){
+        //computer selection
         let randomNumber = Math.floor(Math.random()*3);
         if (randomNumber === 0) {
             setComputer('rock');
-            document.getElementById('computer__choose').className = 'rock';
+            document.getElementById('computer__choose').className = 'rock--computer';
         }
         if (randomNumber === 1) {
             setComputer('paper');
-            document.getElementById('computer__choose').className = 'paper';
+            document.getElementById('computer__choose').className = 'paper--computer';
         }
         if (randomNumber === 2) {
             setComputer('scissors');
-            document.getElementById('computer__choose').className = 'scissors';
+            document.getElementById('computer__choose').className = 'scissors--computer';
         }
-
+        //draw
         if (weapon === computer){
             setResult(' DRAW ');
+            dispatch(draw());
             document.getElementById('result--container').style.backgroundColor = 'yellow';
         }
         //rock
         if ((weapon === 'rock') && (computer === 'paper')){
             setResult(' YOU LOSE ');
+            dispatch(youLose());
             document.getElementById('result--container').style.backgroundColor = 'red';
             dispatch(computerWins());
         }
         if ((weapon === 'rock') && (computer === 'scissors')){
             setResult(' YOU WIN ');
+            dispatch(youWin());
             document.getElementById('result--container').style.backgroundColor = 'lightgreen';
             dispatch(playerWins());
         } 
         //paper
         if ((weapon === 'paper') && (computer === 'scissors')){
             setResult(' YOU LOSE ');
+            dispatch(youLose());
             document.getElementById('result--container').style.backgroundColor = 'red';
             dispatch(computerWins());
         }
         if ((weapon === 'paper') && (computer === 'rock')){
             setResult(' YOU WIN ');
+            dispatch(youWin());
             document.getElementById('result--container').style.backgroundColor = 'lightgreen';
             dispatch(playerWins());
         } 
         //scissors
         if ((weapon === 'scissors') && (computer === 'rock')){
             setResult(' YOU LOSE ');
+            dispatch(youLose());
             document.getElementById('result--container').style.backgroundColor = 'red';
             dispatch(computerWins());
         }
         if ((weapon === 'scissors') && (computer === 'paper')){
             setResult(' YOU WIN ');
+            dispatch(youWin());
             document.getElementById('result--container').style.backgroundColor = 'lightgreen';
             dispatch(playerWins());
         } 
@@ -124,9 +132,6 @@ const Arena = () => {
         document.getElementById('computer__choose')
         .style.background = "url('./images/wolverine.jpg')";
     }*/
-    console.log(computer);
-    console.log(weapon);
-    console.log(result);
 
     return (
         <div className='arena'>
