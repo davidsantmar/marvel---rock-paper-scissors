@@ -4,7 +4,6 @@ import Arena from './components/Arena';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Result from './components/Result';
-import Score from './components/Score';
 import store from './redux/stores'
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
       <div className="App">
           <Header />
           <Arena />
-          <Result />
           <Footer />
       </div>
     </Provider>

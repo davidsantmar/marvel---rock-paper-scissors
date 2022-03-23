@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { computerWins, computerReset } from '../redux/actions/computerScoreActionCreator';
 import { playerWins, playerReset } from '../redux/actions/playerScoreActionCreator';
 import { youLose, youWin, draw } from '../redux/actions/resultActionCreator';
+import Result from './Result';
 
 //funciona pero analiza el resultado mal
 //te da el resultado de la jugada anterior
@@ -10,29 +11,25 @@ import { youLose, youWin, draw } from '../redux/actions/resultActionCreator';
 const Arena = () => {
     //const enemyImages = ['./images/ironman.png', './images/the-thing.jpeg', './images/wolverine.jpg'];
     const [weapon, setWeapon] = useState('');
-    const [result, setResult] = useState();
-    const [computer, setComputer] = useState();
+    const [result, setResult] = useState('');
+    const [computer, setComputer] = useState('');
     const computerScore = useSelector((state) => state.computerScore);
     const playerScore = useSelector((state) => state.playerScore);
-    const resultat = useSelector((state) => state.resultat);
     const dispatch = useDispatch();
 
-    useEffect(() =>{
-        const newWeapon = weapon;
-        setResult(newWeapon);
-    }, [])
-    useEffect(() =>{
-        const newComputer= computer;
-        setResult(newComputer);
-    }, [])
-   
+    useEffect(() => {
+        //dentro va el código con el weapon ya actualizado
+    }, [weapon])
+    useEffect(() => {
+
+    }, [computer])
+
     function resetScore(){
         dispatch(playerReset());
         dispatch(computerReset());
     }
 
-    function battle(){
-        //computer selection
+    function computerSelection(){
         let randomNumber = Math.floor(Math.random()*3);
         if (randomNumber === 0) {
             setComputer('rock');
@@ -46,13 +43,17 @@ const Arena = () => {
             setComputer('scissors');
             document.getElementById('computer__choose').className = 'scissors--computer';
         }
-        //draw
+    }
+
+     function battle(){       
+         computerSelection();   
+        //result draw
         if (weapon === computer){
             setResult(' DRAW ');
             dispatch(draw());
             document.getElementById('result--container').style.backgroundColor = 'yellow';
         }
-        //rock
+        //player selection
         if ((weapon === 'rock') && (computer === 'paper')){
             setResult(' YOU LOSE ');
             dispatch(youLose());
@@ -65,7 +66,6 @@ const Arena = () => {
             document.getElementById('result--container').style.backgroundColor = 'lightgreen';
             dispatch(playerWins());
         } 
-        //paper
         if ((weapon === 'paper') && (computer === 'scissors')){
             setResult(' YOU LOSE ');
             dispatch(youLose());
@@ -78,7 +78,6 @@ const Arena = () => {
             document.getElementById('result--container').style.backgroundColor = 'lightgreen';
             dispatch(playerWins());
         } 
-        //scissors
         if ((weapon === 'scissors') && (computer === 'rock')){
             setResult(' YOU LOSE ');
             dispatch(youLose());
@@ -102,6 +101,8 @@ const Arena = () => {
             document.getElementById('result--container').style.backgroundColor = 'red';
             resetScore();
         }
+        console.log(weapon);
+        console.log(computer);
     }
     
 
@@ -137,8 +138,8 @@ const Arena = () => {
         <div className='arena'>
             <div className='player--container'>
                 <button className='rock' id='rock--choose' onClick={chosenRock}></button>
-                <div className='paper' id='paper--choose' onClick={chosenPaper}></div>
-                <div className='scissors' id='scissors--choose' onClick={chosenScissors}></div>
+                <button className='paper' id='paper--choose' onClick={chosenPaper}></button>
+                <button className='scissors' id='scissors--choose' onClick={chosenScissors}></button>
             </div>
             <div className='result--container'>
                 <div className='result__subtitle' id='result--container'>
@@ -148,6 +149,7 @@ const Arena = () => {
             <div className='computer--container' id='computer--container'>
                 <div className='computer__choose' id='computer__choose'></div>
             </div>
+            <Result />
         </div>
     );
 }

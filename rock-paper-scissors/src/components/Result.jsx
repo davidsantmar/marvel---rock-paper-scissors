@@ -6,8 +6,8 @@ const Result = () => {
     const resultat = useSelector((state) => state.resultat);
 
     return (
-        <div>
-            RESULT {resultat}
+        <div className='result'>
+            RESULTADO: {resultat}
         </div>
     );
 };
