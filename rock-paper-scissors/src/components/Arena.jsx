@@ -19,8 +19,12 @@ const Arena = () => {
 
     useEffect(() => {
         //dentro va el código con el weapon ya actualizado
+        battle();
     }, [weapon])
+    
     useEffect(() => {
+        console.log(computer)
+        //battle();
 
     }, [computer])
 
@@ -45,7 +49,7 @@ const Arena = () => {
         }
     }
 
-     function battle(){       
+    async function battle(){       
          computerSelection();   
         //result draw
         if (weapon === computer){
@@ -101,8 +105,7 @@ const Arena = () => {
             document.getElementById('result--container').style.backgroundColor = 'red';
             resetScore();
         }
-        console.log(weapon);
-        console.log(computer);
+        
     }
     
 

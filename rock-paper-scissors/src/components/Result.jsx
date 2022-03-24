@@ -3,11 +3,11 @@ import { useSelector } from "react-redux";
 
 
 const Result = () => {
-    const resultat = useSelector((state) => state.resultat);
+    const result = useSelector((state) => state.result);
 
     return (
         <div className='result'>
-            RESULTADO: {resultat}
+            RESULTADO: {result}
         </div>
     );
 };
