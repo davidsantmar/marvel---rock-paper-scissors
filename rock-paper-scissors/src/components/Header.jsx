@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../images/logo.png';
 import Score from './Score'
+import Result from './Result';
 
 const Header = () => {
     return (
@@ -10,7 +11,7 @@ const Header = () => {
                 <span className='subtitle'>ROCK PAPER SCISSORS</span>
             </div>
             <div className='result'>
-                <Res
+                <Result />
             </div>
             <div>
                 <Score />

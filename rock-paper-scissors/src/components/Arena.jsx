@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { computerWins, computerReset } from '../redux/actions/computerScoreActionCreator';
 import { playerWins, playerReset } from '../redux/actions/playerScoreActionCreator';
+import { youWin, youLose, draw, computerWon, playerWon } from '../redux/actions/resultActionCreator';
 
 const Arena = () => {
     const enemyImages = ['./components/ironman.png', './components/the-thing.jpeg', './components/wolverine.jpg'];
@@ -19,43 +20,52 @@ const Arena = () => {
         if ((weapon === 'rock') && (computer === 'rock')){
             setResult(' DRAW ');
             document.getElementById('result--container').style.backgroundColor = 'yellow';
+            dispatch(draw());
         }
         if ((weapon === 'rock') && (computer === 'scissors')){
             setResult(' YOU WIN ');
             dispatch(playerWins());
             document.getElementById('result--container').style.backgroundColor = 'lightgreen';
+            dispatch(youWin());
         }
         if ((weapon === 'rock') && (computer === 'paper')){
             setResult(' YOU LOSE ');
             dispatch(computerWins());
             document.getElementById('result--container').style.backgroundColor = 'red';
+            dispatch(youLose());
         }
         if ((weapon === 'paper') && (computer === 'paper')){
             setResult(' DRAW ');
             document.getElementById('result--container').style.backgroundColor = 'yellow';
+            dispatch(draw());
         }
         if ((weapon === 'paper') && (computer === 'scissors')){
             setResult(' YOU LOSE ');
             document.getElementById('result--container').style.backgroundColor = 'red';
             dispatch(computerWins());
+            dispatch(youLose());
         }
         if ((weapon === 'paper') && (computer === 'rock')){
             setResult(' YOU WIN ');
             document.getElementById('result--container').style.backgroundColor = 'lightgreen';
             dispatch(playerWins());
+            dispatch(youWin());
         }
         if ((weapon === 'scissors') && (computer === 'scissors')){
             setResult(' DRAW ');
             document.getElementById('result--container').style.backgroundColor = 'yellow';
+            dispatch(draw());
         }
         if ((weapon === 'scissors') && (computer === 'rock')){
             setResult(' YOU LOSE ');
             document.getElementById('result--container').style.backgroundColor = 'red';
             dispatch(computerWins());
+            dispatch(youLose());
         }
         if ((weapon === 'scissors') && (computer === 'paper')){
             setResult(' YOU WIN ');
             dispatch(playerWins());
+            dispatch(youWin());
         }  
         clearWeapon();
         maxScore();
@@ -89,11 +99,13 @@ const Arena = () => {
         if (playerScore === 5){
             setResult('YOU HAVE WON THE BATTLE');
             document.getElementById('result--container').style.backgroundColor = 'lightgreen';
+            dispatch(playerWon());
             resetScore();
         }
         if (computerScore === 5){
             setResult('COMPUTER HAS WON THE BATTLE');
             document.getElementById('result--container').style.backgroundColor = 'red';
+            dispatch(computerWon());
             resetScore();
         }
     }
@@ -140,7 +152,6 @@ const Arena = () => {
         <>
         <div className='result--container'>
             <div className='result__subtitle' id='result--container'>
-                {result}
             </div>
         </div>
         <div className='arena--vertical'>

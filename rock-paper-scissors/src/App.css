@@ -71,21 +71,7 @@ body{
   background-color: white;
   padding: 1rem;
 }
-.result--container{
-  display: flex;
-  justify-content: center;
-  border-radius: 5px;
-  height: 2rem;
-  margin: 1rem;
-  font-size: 2rem;
-}
-.result__subtitle{
-  color: black;
-  font-size: 3rem;
-  background-color: white;
-  border-radius: 5px;
-  height: 3rem;
-}
+
 .computer--container{
   display: flex;
   justify-content: center;
@@ -99,7 +85,7 @@ body{
 .footer--container{
   display: flex;
   justify-content: center;
-  margin: 3rem;
+  margin: .5rem;
 }
 footer{
   font-size: 1rem;
@@ -183,4 +169,7 @@ footer{
   color: white;
 }
 
-
+.result{
+  color: white;
+  font-size: 4rem;
+}
