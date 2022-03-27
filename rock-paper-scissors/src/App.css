@@ -109,50 +109,6 @@ footer{
 .go--container{
   color: #ED1D24;
 }
-.scissors{
-  background: url('./components/wolverine.jpg');
-  border: solid 1px black;
-  border-radius: 5px;
-  width: 14rem;
-  height: 10rem;
-}
-.paper{
-  background: url('./components/ironman.png');
-  border: solid 1px black;
-  border-radius: 5px;
-  width: 14rem;
-  height: 10rem;
-  background-color: white;
-}
-.rock{
-  background: url('./components/the-thing.jpeg');
-  border: solid 1px black;
-  border-radius: 5px;
-  width: 14rem;
-  height: 10rem;
-}
-.rock--computer{
-  background: url('./components/doom.jpeg');
-  background-size: cover;
-  border: solid 1px black;
-  border-radius: 5px;
-  width: 14rem;
-  height: 10rem;
-}
-.paper--computer{
-  background: url('./components/magneto.jpeg');
-  border: solid 1px black;
-  border-radius: 5px;
-  width: 14rem;
-  height: 10rem;
-}
-.scissors--computer{
-  background: url('./components/octopus.jpg');
-  border: solid 1px black;
-  border-radius: 5px;
-  width: 14rem;
-  height: 10rem;
-}
 .arena--vertical{
   display: flex;
   flex-direction: row;
@@ -162,7 +118,7 @@ footer{
 .player--container--vertical{
   display: flex;
   flex-direction: row;
-
+  justify-content: space-around;
 }
 .rock--vertical{
   background: url('./components/hulk.jpg');
@@ -181,22 +137,23 @@ footer{
   width: 15rem;
   height: 30rem;
   background-size: cover;
-
-}
-.computer--choose--vertical{
-  display: flex;
-  width: 15rem;
-  height: 30rem;
 }
 .computer__choose__vertical{
-  border: solid 1px black;
+  display: flex;
   border-radius: 5px;
   width: 15rem;
   height: 30rem;
   margin: .1rem;
 }
-
-
+.computer--container--vertical{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.title__weapon{
+  font-size: 2rem;
+  color: white;
+}
 .rock--computer--vertical{
   background: url('./components/ultron.jpg');
   background-size: cover;
@@ -220,6 +177,10 @@ footer{
   border-radius: 5px;
   width: 15rem;
   height: 30rem;
+}
+.title__computer{
+  font-size: 2rem;
+  color: white;
 }
 
 

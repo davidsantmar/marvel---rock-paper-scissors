@@ -9,6 +9,9 @@ const Header = () => {
                 <img className='logo' src={logo} alt='logo'/>
                 <span className='subtitle'>ROCK PAPER SCISSORS</span>
             </div>
+            <div className='result'>
+                <Res
+            </div>
             <div>
                 <Score />
             </div>

@@ -71,21 +71,18 @@ const Arena = () => {
         let randomNumber = Math.floor(Math.random()*3);
         if (randomNumber === 0) {
             setComputer('rock');
-            document.getElementById('computer__choose').className = 'rock--computer';
             document.getElementById('computer__choose__vertical').className = 'rock--computer--vertical';
-
+            document.getElementById('title__computer').innerHTML = 'ROCK';
         }
         if (randomNumber === 1) {
             setComputer('paper');
-            document.getElementById('computer__choose').className = 'paper--computer';
             document.getElementById('computer__choose__vertical').className = 'paper--computer--vertical';
-
+            document.getElementById('title__computer').innerHTML = 'PAPER';
         }
         if (randomNumber === 2) {
             setComputer('scissors');
-            document.getElementById('computer__choose').className = 'scissors--computer';
             document.getElementById('computer__choose__vertical').className = 'scissors--computer--vertical';
-
+            document.getElementById('title__computer').innerHTML = 'SCISSORS';
         }
     }
     function maxScore(){
@@ -141,34 +138,24 @@ const Arena = () => {
 
     return (
         <>
-        <div className='arena'>
-            <div className='player--container'>
-                <button className='rock' id='rock--choose' onClick={chosenRock}></button>
-                <button className='paper' id='paper--choose' onClick={chosenPaper}></button>
-                <button className='scissors' id='scissors--choose' onClick={chosenScissors}></button>
-            </div>
-            <div className='result--container'>
-                <div className='result__subtitle' id='result--container'>
-                    {result}
-                </div>
-            </div>
-            <div className='computer--container' id='computer--container'>
-                <div className='computer__choose' id='computer__choose'></div>
+        <div className='result--container'>
+            <div className='result__subtitle' id='result--container'>
+                {result}
             </div>
         </div>
         <div className='arena--vertical'>
-                <div className='player--container--vertical'>
-                    ROCK
-                    <button className='rock--vertical' id='rock--choose' onClick={chosenRock}></button>
-                    PAPER
-                    <button className='paper--vertical' id='paper--choose' onClick={chosenPaper}></button>
-                    SCISSORS
-                    <button className='scissors--vertical' id='scissors--choose' onClick={chosenScissors}></button>
-                </div>
-               
-                <div className='computer--container--vertical' id='computer--container'>
-                    <div className='computer__choose__vertical' id='computer__choose__vertical'></div>
-                </div>
+            <div className='player--container--vertical'>
+                <span className='title__weapon'>ROCK</span>
+                <button className='rock--vertical' id='rock--choose' onClick={chosenRock}></button>
+                <span className='title__weapon'>PAPER</span>
+                <button className='paper--vertical' id='paper--choose' onClick={chosenPaper}></button>
+                <span className='title__weapon'>SCISSORS</span>
+                <button className='scissors--vertical' id='scissors--choose' onClick={chosenScissors}></button>
+            </div>
+            <div className='computer--container--vertical' id='computer--container'>
+                <span className='title__computer' id='title__computer'></span>
+                <div className='computer__choose__vertical' id='computer__choose__vertical'></div>
+            </div>
         </div>
         </>
     );
