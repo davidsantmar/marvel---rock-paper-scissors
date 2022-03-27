@@ -153,8 +153,73 @@ footer{
   width: 14rem;
   height: 10rem;
 }
+.arena--vertical{
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: space-around;
+}
+.player--container--vertical{
+  display: flex;
+  flex-direction: row;
+
+}
+.rock--vertical{
+  background: url('./components/hulk.jpg');
+  width: 15rem;
+  height: 30rem;
+  background-size: cover;
+}
+.paper--vertical{
+  background: url('./components/ironman.jpg');
+  width: 15rem;
+  height: 30rem;
+  background-size: cover;
+
+}.scissors--vertical{
+  background: url('./components/wolve.jpg');
+  width: 15rem;
+  height: 30rem;
+  background-size: cover;
+
+}
+.computer--choose--vertical{
+  display: flex;
+  width: 15rem;
+  height: 30rem;
+}
+.computer__choose__vertical{
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 15rem;
+  height: 30rem;
+  margin: .1rem;
+}
 
 
-
+.rock--computer--vertical{
+  background: url('./components/ultron.jpg');
+  background-size: cover;
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 15rem;
+  height: 30rem;
+}
+.paper--computer--vertical{
+  background: url('./components/magnus.jpg');
+  background-size: cover;
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 15rem;
+  height: 30rem;
+}
+.scissors--computer--vertical{
+  background: url('./components/dr-doom.jpg');
+  background-size: cover;
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 15rem;
+  height: 30rem;
+}
 
 

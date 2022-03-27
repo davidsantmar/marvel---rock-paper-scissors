@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { computerWins, computerReset } from '../redux/actions/computerScoreActionCreator';
 import { playerWins, playerReset } from '../redux/actions/playerScoreActionCreator';
-import Result from './Result';
 
 const Arena = () => {
     const enemyImages = ['./components/ironman.png', './components/the-thing.jpeg', './components/wolverine.jpg'];
@@ -73,14 +72,20 @@ const Arena = () => {
         if (randomNumber === 0) {
             setComputer('rock');
             document.getElementById('computer__choose').className = 'rock--computer';
+            document.getElementById('computer__choose__vertical').className = 'rock--computer--vertical';
+
         }
         if (randomNumber === 1) {
             setComputer('paper');
             document.getElementById('computer__choose').className = 'paper--computer';
+            document.getElementById('computer__choose__vertical').className = 'paper--computer--vertical';
+
         }
         if (randomNumber === 2) {
             setComputer('scissors');
             document.getElementById('computer__choose').className = 'scissors--computer';
+            document.getElementById('computer__choose__vertical').className = 'scissors--computer--vertical';
+
         }
     }
     function maxScore(){
@@ -135,6 +140,7 @@ const Arena = () => {
     }*/
 
     return (
+        <>
         <div className='arena'>
             <div className='player--container'>
                 <button className='rock' id='rock--choose' onClick={chosenRock}></button>
@@ -149,8 +155,22 @@ const Arena = () => {
             <div className='computer--container' id='computer--container'>
                 <div className='computer__choose' id='computer__choose'></div>
             </div>
-            <Result />
         </div>
+        <div className='arena--vertical'>
+                <div className='player--container--vertical'>
+                    ROCK
+                    <button className='rock--vertical' id='rock--choose' onClick={chosenRock}></button>
+                    PAPER
+                    <button className='paper--vertical' id='paper--choose' onClick={chosenPaper}></button>
+                    SCISSORS
+                    <button className='scissors--vertical' id='scissors--choose' onClick={chosenScissors}></button>
+                </div>
+               
+                <div className='computer--container--vertical' id='computer--container'>
+                    <div className='computer__choose__vertical' id='computer__choose__vertical'></div>
+                </div>
+        </div>
+        </>
     );
 }
 
