@@ -5,11 +5,8 @@ import { playerWins, playerReset } from '../redux/actions/playerScoreActionCreat
 import { youLose, youWin, draw } from '../redux/actions/resultActionCreator';
 import Result from './Result';
 
-//funciona pero analiza el resultado mal
-//te da el resultado de la jugada anterior
-
 const Arena = () => {
-    //const enemyImages = ['./images/ironman.png', './images/the-thing.jpeg', './images/wolverine.jpg'];
+    const enemyImages = ['./components/ironman.png', './components/the-thing.jpeg', './components/wolverine.jpg'];
     const [weapon, setWeapon] = useState('');
     const [result, setResult] = useState('');
     const [computer, setComputer] = useState('');
@@ -19,15 +16,35 @@ const Arena = () => {
 
     useEffect(() => {
         //dentro va el código con el weapon ya actualizado
-        battle();
+        console.log(weapon);
+        console.log(computer);
+        battle1();
     }, [weapon])
+
+    function battle1(){
+        if (weapon === ''){
+            console.log('nada');
+            setResult('');
+        }
+        if ((weapon === 'rock') && (computer === 'rock')){
+            console.log('draw');
+            setResult('draw');
+            dispatch(draw());
+        }
+        if ((weapon === 'rock') && (computer === 'scissors')){
+            console.log('you win');
+            setResult('you win');
+            dispatch(playerWins());
+
+        }
+        if ((weapon === 'rock') && (computer === 'paper')){
+            console.log('you lose');
+            setResult('you lose');
+            dispatch(computerWins());
+
+        }
+    }
     
-    useEffect(() => {
-        console.log(computer)
-        //battle();
-
-    }, [computer])
-
     function resetScore(){
         dispatch(playerReset());
         dispatch(computerReset());
@@ -50,9 +67,12 @@ const Arena = () => {
     }
 
     async function battle(){       
-         computerSelection();   
+        computerSelection(); 
+        if (weapon === ''){
+            setResult('');
+        }  
         //result draw
-        if (weapon === computer){
+        if ((weapon === computer) && (weapon !== '')){
             setResult(' DRAW ');
             dispatch(draw());
             document.getElementById('result--container').style.backgroundColor = 'yellow';
@@ -111,11 +131,13 @@ const Arena = () => {
 
     //setInterval(document.getElementById('computer__choose').innerHTML += ("Hello", 1000));
     function chosenRock(){
+        setEnemyImages();
         setWeapon('rock');
         document.getElementById('rock--choose').style.border = 'solid 10px lightgreen';
         document.getElementById('paper--choose').style.border = 'solid 1px black';        
         document.getElementById('scissors--choose').style.border = 'solid 1px black';              
         battle();
+        //battle1();
     }
     function chosenPaper(){
         setWeapon('paper');
@@ -132,10 +154,19 @@ const Arena = () => {
         battle();
     }
 
-    /*function setEnemyImages(){
-        document.getElementById('computer__choose')
-        .style.background = "url('./images/wolverine.jpg')";
-    }*/
+    function setEnemyImages(){   
+    let container = document.getElementById('prueba');
+    let i = 0;
+    setInterval(function() {
+    let newImg = 'url("' + enemyImages[i] + '")'
+    //  console.log(newImg);
+    container.style.background = newImg;
+    i = i + 1;
+    if (i === enemyImages.length) {
+        i = 0;
+    }
+    }, 1000);
+    }
 
     return (
         <div className='arena'>
@@ -152,6 +183,7 @@ const Arena = () => {
             <div className='computer--container' id='computer--container'>
                 <div className='computer__choose' id='computer__choose'></div>
             </div>
+            <div className='prueba' id='prueba'></div>
             <Result />
         </div>
     );
