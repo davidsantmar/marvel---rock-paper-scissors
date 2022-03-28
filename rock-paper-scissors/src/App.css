@@ -36,6 +36,9 @@ body{
 .result{
   color: white;
   font-size: 5rem;
+  height: 4.5rem;
+  border-radius: 5px;
+  padding: 1rem;
 }
 .score{
   display: flex;
