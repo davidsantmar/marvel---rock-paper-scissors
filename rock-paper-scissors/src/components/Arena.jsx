@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { computerWins, computerReset } from '../redux/actions/computerScoreActionCreator';
 import { playerWins, playerReset } from '../redux/actions/playerScoreActionCreator';
 import { youWin, youLose, draw, computerWon, playerWon } from '../redux/actions/resultActionCreator';
+import avengersSound from '../redux/sounds/avengers.mp3';
 
 const Arena = () => {
     const [weapon, setWeapon] = useState('');
@@ -13,6 +14,11 @@ const Arena = () => {
     useEffect(() => {
         battle();
     }, [weapon]);
+
+    window.onload = function() {
+        const avengers = new Audio(avengersSound);
+        avengers.play();
+    }
 
     function battle(){
         if ((weapon === 'rock') && (computer === 'rock')){
@@ -108,6 +114,8 @@ const Arena = () => {
         computerSelection();
     }
     return (
+        <>
+        <audio id="audio" src="../src/components/avengers.mp3" loop="loop"></audio>
         <div className='arena--vertical'>
             <div className='player--container--vertical'>
                 <div className='rock--vertical' id='rock--choose' onClick={chosenRock}>
@@ -126,6 +134,7 @@ const Arena = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 }
 

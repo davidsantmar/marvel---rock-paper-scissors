@@ -75,7 +75,7 @@ body{
 }
 .rock--vertical, .paper--vertical, .scissors--vertical{
   display: flex;
-  background: url('./components/hulk.jpg');
+  background: url('./components/thor.jpg');
   width: 15rem;
   height: 30rem;
   background-size: cover;
@@ -84,10 +84,11 @@ body{
 .paper--vertical{
   display: flex;
   background: url('./components/ironman.jpg');
+  background-size: cover;
 }
 .scissors--vertical{
   display: flex;
-  background: url('./components/wolve.jpg');
+  background: url('./components/capi.jpg');
   background-size: cover;
 }
 .computer__choose__vertical{
@@ -109,7 +110,7 @@ body{
 }
 .rock--computer--vertical, .paper--computer--vertical, .scissors--computer--vertical{
   display: flex;
-  background: url('./components/ultron.jpg');
+  background: url('./components/ultron.jpeg');
   background-size: cover;
   border: solid 1px black;
   border-radius: 5px;
@@ -118,11 +119,12 @@ body{
 }
 .paper--computer--vertical{
   display: flex;
-  background: url('./components/magnus.jpg');
+  background: url('./components/loki.png');
+  background-size: cover;
 }
 .scissors--computer--vertical{
   display: flex;
-  background: url('./components/dr-doom.jpg');
+  background: url('./components/doom.jpg');
   background-size: cover;
 }
 .footer--container{
