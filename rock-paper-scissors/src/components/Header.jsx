@@ -13,7 +13,7 @@ const Header = () => {
             <div className='result' id='result'>
                 <Result />
             </div>
-            <div>
+            <div className='score--container'>
                 <Score />
             </div>
         </div>
