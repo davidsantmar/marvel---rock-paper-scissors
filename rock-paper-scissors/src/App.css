@@ -6,7 +6,7 @@ body{
   padding: 1rem;
   justify-content: space-around;
   background-attachment: fixed;
-  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)),url('./images/Background.jpeg');
+  background-image: url('./images/back.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -139,4 +139,20 @@ footer{
 }
 .go--container{
   color: #ED1D24;
+}
+
+@media (max-width: 640px){
+  .header{
+    flex-wrap: wrap;
+  }
+  .player--container--vertical{
+    flex-wrap: wrap;
+    width: 15rem;
+  }
+  .rock--vertical, .paper--vertical, .scissors--vertical{
+    height: 15rem;
+  }
+  .rock--vertical{
+    background-position: center;
+  }
 }
