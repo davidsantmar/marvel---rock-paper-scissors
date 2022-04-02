@@ -148,6 +148,70 @@ footer{
 .go--container{
   color: #ED1D24;
 }
+@media (max-width: 900px){
+  
+}
+
+
+@media (max-width: 768px){
+  .header{
+    display: flex;
+    flex-direction: column;
+  }
+  .logo--score--container{
+    display: flex;
+    justify-content: row;
+    flex-wrap: wrap-reverse;
+  }
+  .logo{
+    width: 6rem;
+    height: 2rem;
+  }
+  .score--container{
+    display: flex;
+    justify-content: center;
+  }
+  .score{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin-left: 2rem;
+    height: 3rem;
+    flex-direction: row;
+    width: 20rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .score--title{
+    font-size: 2rem;
+  }
+  .player--score{
+    margin-bottom: .5rem;
+  }
+  .result{
+    font-size: 3rem;
+    padding: 0;
+    height: 3rem;
+    order: 2;
+  }
+  .player--container--vertical{
+    display: flex;
+    flex-direction: column;
+  }
+  .rock--vertical, .paper--vertical, .scissors--vertical{
+    height: 9rem;
+    width: 14rem;
+    margin-bottom: 1rem;
+  }
+  .rock--vertical{
+    background-position: center;
+  }
+  .paper--computer--vertical, .scissors--computer--vertical, .rock--computer--vertical{
+    height: 30.5rem;
+    width: 14rem;
+  }
+}
+
 
 @media (max-width: 600px){
   .header{
