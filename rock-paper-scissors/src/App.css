@@ -148,6 +148,39 @@ footer{
 .go--container{
   color: #ED1D24;
 }
+@media (max-width: 1024px){
+  .header{
+    display: flex;
+    justify-content: space-between;
+  }
+  .logo{
+    width: 13rem;
+    height: 7rem;
+  }
+  .score--title{
+    padding: 0.2rem;
+  }
+  .result{
+    font-size: 2.8rem;
+    height: 100%;
+  }
+  .rock--vertical, .paper--vertical, .scissors--vertical{
+    width: 9rem;
+    margin-right: 1rem;
+  }
+  .paper--computer--vertical, .scissors--computer--vertical, .rock--computer--vertical{
+    width: 12rem;
+  }
+  .scissors--vertical, .rock--vertical{
+    background-position: right;
+  }
+  .paper--computer--vertical, .scissors--computer--vertical{
+    background-position: center;
+  }
+  .footer--container{
+    margin-top: 2rem;
+  }
+}
 @media (max-width: 900px){
   .header{
     display: flex;
@@ -156,6 +189,10 @@ footer{
   .logo{
     width: 13rem;
     height: 7rem;
+  }
+  .score--title{
+    height: 3.5rem;
+    padding: 0;
   }
   .result{
     font-size: 2.3rem;
@@ -177,8 +214,6 @@ footer{
     background-position: center;
   }
 }
-
-
 @media (max-width: 768px){
   .header{
     display: flex;
@@ -199,9 +234,8 @@ footer{
   }
   .score{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width: 50%;
-    margin-left: 2rem;
     height: 3rem;
     flex-direction: row;
     width: 20rem;
@@ -210,6 +244,7 @@ footer{
   }
   .score--title{
     font-size: 2rem;
+    margin-top: 1.5rem;
   }
   .player--score{
     margin-bottom: .5rem;
