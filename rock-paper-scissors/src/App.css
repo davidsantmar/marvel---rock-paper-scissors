@@ -149,7 +149,33 @@ footer{
   color: #ED1D24;
 }
 @media (max-width: 900px){
-  
+  .header{
+    display: flex;
+    justify-content: space-between;
+  }
+  .logo{
+    width: 13rem;
+    height: 7rem;
+  }
+  .result{
+    font-size: 2.3rem;
+    height: 100%;
+  }
+  .rock--vertical, .paper--vertical, .scissors--vertical{
+    height: 29rem;
+    width: 9rem;
+    margin-right: 1rem;
+  }
+  .scissors--vertical, .rock--vertical{
+    background-position: right;
+  }
+  .paper--computer--vertical, .scissors--computer--vertical, .rock--computer--vertical{
+    height: 29rem;
+    width: 9rem;
+  }
+  .paper--computer--vertical, .scissors--computer--vertical{
+    background-position: center;
+  }
 }
 
 
