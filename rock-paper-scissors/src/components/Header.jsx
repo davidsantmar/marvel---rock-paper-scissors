@@ -7,7 +7,9 @@ const Header = () => {
     return (
         <div className='header'>
             <div className="logo--container">
-                <img className='logo' src={logo} alt='logo'/>
+                <div>
+                    <img className='logo' src={logo} alt='logo'/>
+                </div>
                 <span className='subtitle'>ROCK PAPER SCISSORS</span>
             </div>
             <div className='result' id='result'>

@@ -149,40 +149,59 @@ footer{
   color: #ED1D24;
 }
 
-@media (max-width: 640px){
+@media (max-width: 600px){
   .header{
-    flex-wrap: wrap;
-    align-items: center;
+    justify-content: center;
     flex-direction: column;
+    flex-wrap: wrap;
   }
   .logo--container{
-    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+  }
+  .logo{
+    width: 6rem;
+    height: 2rem;
+  }
+  .subtitle{
+    font-size: .9rem;
   }
   .score--container{
-    order: 1;
+    display: flex;
+    justify-content: center;
   }
   .score{
     display: flex;
+    justify-content: center;
+    width: 50%;
+    margin-left: 2rem;
+    height: 3rem;
     flex-direction: row;
     width: 20rem;
     align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .score--title{
+    font-size: 2rem;
   }
   .player--score{
     margin-bottom: .5rem;
   }
   .result{
     order: 2;
-    margin: 1rem;
-    font-size: 2.3rem;
+    font-size: 2rem;
     height: 2rem;
+    padding: 0.2rem;
   }
   .player--container--vertical{
     flex-wrap: wrap;
     flex-direction: column;
   }
   .rock--vertical, .paper--vertical, .scissors--vertical{
-    height: 15rem;
-    width: 10rem;
+    height: 9rem;
+    width: 9rem;
   }
   .rock--vertical{
     background-position: center;
@@ -191,10 +210,9 @@ footer{
   .paper--vertical{
     margin-bottom: 1rem;
   }
-  .computer--container--vertical{
-    margin-top : 10rem;
-    width: 10rem;
-    height: 15rem;
+  .paper--computer--vertical, .scissors--computer--vertical, .rock--computer--vertical{
+    height: 30.5rem;
+    width: 12rem;
   }
   .paper--computer--vertical{
     background-position: center;
