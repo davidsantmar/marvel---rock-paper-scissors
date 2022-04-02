@@ -148,6 +148,19 @@ footer{
 .go--container{
   color: #ED1D24;
 }
+@media (max-width: 1200px){
+  .paper--vertical, .scissors--vertical, .rock--vertical{
+    width: 12rem;
+    margin-right: 1rem;
+  }
+  .scissors--vertical, .rock--vertical{
+    background-position: right;
+  }
+  .result{
+    font-size: 2.8rem;
+    height: 100%;
+  }
+}
 @media (max-width: 1024px){
   .header{
     display: flex;
@@ -174,9 +187,6 @@ footer{
   .scissors--vertical, .rock--vertical{
     background-position: right;
   }
-  .paper--computer--vertical, .scissors--computer--vertical{
-    background-position: center;
-  }
   .footer--container{
     margin-top: 2rem;
   }
@@ -191,8 +201,10 @@ footer{
     height: 7rem;
   }
   .score--title{
-    height: 3.5rem;
+    height: 3rem;
     padding: 0;
+    margin-top: 1rem;
+    font-size: 2.5rem;
   }
   .result{
     font-size: 2.3rem;
@@ -204,8 +216,9 @@ footer{
     margin-right: 1rem;
   }
   .scissors--vertical, .rock--vertical{
-    background-position: right;
+    background-position: right top;
   }
+
   .paper--computer--vertical, .scissors--computer--vertical, .rock--computer--vertical{
     height: 29rem;
     width: 9rem;
@@ -244,7 +257,7 @@ footer{
   }
   .score--title{
     font-size: 2rem;
-    margin-top: 1.5rem;
+    margin-left: 1rem;
   }
   .player--score{
     margin-bottom: .5rem;
@@ -263,6 +276,9 @@ footer{
     height: 9rem;
     width: 14rem;
     margin-bottom: 1rem;
+  }
+  .scissors--vertical{
+    margin-bottom: 0;
   }
   .rock--vertical{
     background-position: center;
@@ -331,6 +347,9 @@ footer{
   .rock--vertical{
     background-position: center;
     margin-bottom: 1rem;
+  }
+  .scissors--vertical{
+    background-position: top;
   }
   .paper--vertical{
     margin-bottom: 1rem;
