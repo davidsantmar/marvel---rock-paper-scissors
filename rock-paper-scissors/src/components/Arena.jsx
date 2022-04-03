@@ -19,7 +19,6 @@ const Arena = () => {
         const avengers = new Audio(avengersSound);
         avengers.play();
     }
-
     function battle(){
         if ((weapon === 'rock') && (computer === 'rock')){
             dispatch(draw());
@@ -115,9 +114,9 @@ const Arena = () => {
     }
     return (
         <>
-        <audio id="audio" src="../src/components/avengers.mp3" loop="loop"></audio>
+        <audio id="audio" src="../src/components/avengers.mp3" loop="loop" data-testid='audio'></audio>
         <div className='arena--vertical'>
-            <div className='player--container--vertical'>
+            <div className='player--container--vertical' data-testid='playerContainer'>
                 <div className='rock--vertical' id='rock--choose' onClick={chosenRock}>
                     <span className='title__weapon'>ROCK</span>
                 </div>
@@ -128,9 +127,9 @@ const Arena = () => {
                     <span className='title__weapon'>SCISSORS</span>
                 </div>
             </div>
-            <div className='computer--container--vertical' id='computer--container'>
+            <div className='computer--container--vertical' id='computer--container' data-testid='computerContainer'>
                 <div className='computer__choose__vertical' id='computer__choose__vertical'>
-                    <span className='title__computer' id='title__computer'></span>
+                    <span className='title__computer' id='title__computer' data-testid='computerSubtitle'></span>
                 </div>
             </div>
         </div>
