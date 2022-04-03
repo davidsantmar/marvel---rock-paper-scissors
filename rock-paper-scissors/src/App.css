@@ -80,6 +80,7 @@ body{
   height: 30rem;
   background-size: cover;
   border-radius: 5px;
+  margin-right: 1rem;
 }
 .paper--vertical{
   display: flex;
