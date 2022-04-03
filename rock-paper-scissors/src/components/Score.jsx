@@ -8,10 +8,10 @@ function Score() {
       <>
       <div className='score'>
         <span className='score--title'>SCORE</span>
-        <div className='player--score'>
+        <div className='player--score' data-testid='playerScore'>
           HERO: {playerScore}
         </div>
-        <div className='computer--score'>
+        <div className='computer--score' data-testid='computerScore'>
           VILLAIN: {computerScore}
         </div>
       </div>
