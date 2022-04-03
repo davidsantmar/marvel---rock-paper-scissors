@@ -10,12 +10,12 @@ const Header = () => {
                     <div>
                         <img className='logo' src={logo} alt='logo'/>
                     </div>
-                    <span className='subtitle'>ROCK PAPER SCISSORS</span>
+                    <span className='subtitle' data-testid='subtitle'>ROCK PAPER SCISSORS</span>
                 </div>
-                <div className='result' id='result'>
+                <div className='result' id='result' data-testid='result'>
                     <Result />
                 </div>
-            <div className='score--container'>
+            <div className='score--container' data-testid='scoreContainer'>
                 <Score />
             </div>
         </div>
