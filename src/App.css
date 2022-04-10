@@ -1,38 +1,368 @@
+@font-face {
+  font-family: "Marvel";
+  src: url('./Marvel.ttf');
+}
+body{
+  padding: 1rem;
+  justify-content: space-around;
+  background-attachment: fixed;
+  background-image: url('./images/back.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .App {
   text-align: center;
+  font-family: 'Marvel';
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+  background: url('./images/logo.png');
+  background-repeat: no-repeat;
+  width: 20rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo--container{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.subtitle{
+  font-size: 1rem;
   color: white;
 }
+.result{
+  color: white;
+  font-size: 5rem;
+  height: 4.5rem;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.score{
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+  background-color: white;
+  font-size: 2rem;
+  border-radius: 5px;
+}
+.score--title{
+  font-size: 3rem;
+  padding: 1rem;
+  color: #ED1D24;
+}
+.player--score{
+  width: 10rem;
+  height: 2rem;
+}
+.computer--score{
+  width: 10rem;
+  height: 2rem;
+  margin-bottom: .5rem;
+}
+.arena--vertical{
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: space-between;
+}
+.player--container--vertical{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.rock--vertical, .paper--vertical, .scissors--vertical{
+  display: flex;
+  background: url('./components/thor.jpg');
+  width: 15rem;
+  height: 30rem;
+  background-size: cover;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+.paper--vertical{
+  display: flex;
+  background: url('./components/ironman.jpg');
+  background-size: cover;
+}
+.scissors--vertical{
+  display: flex;
+  background: url('./components/capi.jpg');
+  background-size: cover;
+}
+.computer__choose__vertical{
+  display: flex;
+  border-radius: 5px;
+  width: 15rem;
+  height: 30rem;
+  margin: .1rem;
+  border-radius: 5px;
+}
+.computer--container--vertical{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.title__weapon, .title__computer{
+  font-size: 2rem;
+  color: white;
+}
+.rock--computer--vertical{
+  display: flex;
+  background: url('./components/ultron.jpeg');
+  background-size: cover;
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 15rem;
+  height: 30rem;
+}
+.paper--computer--vertical{
+  display: flex;
+  background: url('./components/loki.png');
+  background-size: cover;
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 15rem;
+  height: 30rem;
+}
+.scissors--computer--vertical{
+  display: flex;
+  background: url('./components/doom.jpg');
+  background-size: cover;
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 15rem;
+  height: 30rem;
+}
+.footer--container{
+  display: flex;
+  justify-content: center;
+  margin: .5rem;
+}
+footer{
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: white;
+}
+.go--container{
+  color: #ED1D24;
+}
+@media (max-width: 1200px){
+  .paper--vertical, .scissors--vertical, .rock--vertical{
+    width: 12rem;
+    margin-right: 1rem;
+  }
+  .scissors--vertical, .rock--vertical{
+    background-position: right;
+  }
+  .result{
+    font-size: 2.8rem;
+    height: 100%;
+  }
+}
+@media (max-width: 1024px){
+  .header{
+    display: flex;
+    justify-content: space-between;
+  }
+  .logo{
+    width: 13rem;
+    height: 7rem;
+  }
+  .score--title{
+    padding: 0.2rem;
+  }
+  .result{
+    font-size: 2.8rem;
+    height: 100%;
+  }
+  .rock--vertical, .paper--vertical, .scissors--vertical{
+    width: 9rem;
+    margin-right: 1rem;
+  }
+  .paper--computer--vertical, .scissors--computer--vertical, .rock--computer--vertical{
+    width: 12rem;
+  }
+  .scissors--vertical, .rock--vertical{
+    background-position: right;
+  }
+  .footer--container{
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 900px){
+  .header{
+    display: flex;
+    justify-content: space-between;
+  }
+  .logo{
+    width: 13rem;
+    height: 7rem;
+  }
+  .score--title{
+    height: 3rem;
+    padding: 0;
+    margin-top: 1rem;
+    font-size: 2.5rem;
+  }
+  .result{
+    font-size: 2.3rem;
+    height: 100%;
+  }
+  .rock--vertical, .paper--vertical, .scissors--vertical{
+    height: 29rem;
+    width: 9rem;
+    margin-right: 1rem;
+  }
+  .scissors--vertical, .rock--vertical{
+    background-position: right top;
+  }
 
-.App-link {
-  color: #61dafb;
+  .paper--computer--vertical, .scissors--computer--vertical, .rock--computer--vertical{
+    height: 29rem;
+    width: 9rem;
+  }
+  .paper--computer--vertical, .scissors--computer--vertical{
+    background-position: center;
+  }
+}
+@media (max-width: 768px){
+  .header{
+    display: flex;
+    flex-direction: column;
+  }
+  .logo--score--container{
+    display: flex;
+    justify-content: row;
+    flex-wrap: wrap-reverse;
+  }
+  .logo{
+    width: 6rem;
+    height: 2rem;
+  }
+  .score--container{
+    display: flex;
+    justify-content: center;
+  }
+  .score{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    height: 3rem;
+    flex-direction: row;
+    width: 20rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .score--title{
+    font-size: 2rem;
+    margin-left: 1rem;
+  }
+  .player--score{
+    margin-bottom: .5rem;
+  }
+  .result{
+    font-size: 3rem;
+    padding: 0;
+    height: 3rem;
+    order: 2;
+  }
+  .player--container--vertical{
+    display: flex;
+    flex-direction: column;
+  }
+  .rock--vertical, .paper--vertical, .scissors--vertical{
+    height: 9rem;
+    width: 14rem;
+    margin-bottom: 1rem;
+  }
+  .scissors--vertical{
+    margin-bottom: 0;
+  }
+  .rock--vertical{
+    background-position: center;
+  }
+  .paper--computer--vertical, .scissors--computer--vertical, .rock--computer--vertical{
+    height: 30.5rem;
+    width: 14rem;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+@media (max-width: 600px){
+  .header{
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
-  to {
-    transform: rotate(360deg);
+  .logo--container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+  }
+  .logo{
+    width: 6rem;
+    height: 2rem;
+  }
+  .subtitle{
+    font-size: .9rem;
+  }
+  .score--container{
+    display: flex;
+    justify-content: center;
+  }
+  .score{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin-left: 2rem;
+    height: 3rem;
+    flex-direction: row;
+    width: 20rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .score--title{
+    font-size: 2rem;
+  }
+  .player--score{
+    margin-bottom: .5rem;
+  }
+  .result{
+    order: 2;
+    font-size: 2rem;
+    height: 2rem;
+    padding: 0.2rem;
+  }
+  .player--container--vertical{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .rock--vertical, .paper--vertical, .scissors--vertical{
+    height: 9rem;
+    width: 9rem;
+  }
+  .rock--vertical{
+    background-position: center;
+    margin-bottom: 1rem;
+  }
+  .scissors--vertical{
+    background-position: top;
+  }
+  .paper--vertical{
+    margin-bottom: 1rem;
+  }
+  .paper--computer--vertical, .scissors--computer--vertical, .rock--computer--vertical{
+    height: 30.5rem;
+    width: 12rem;
+  }
+  .paper--computer--vertical{
+    background-position: center;
+  }
+  .scissors--computer--vertical{
+    background-position: center;
   }
 }
