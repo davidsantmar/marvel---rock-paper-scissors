@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,12 +68,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# marvel---rock-paper-scissors
-![image](https://user-images.githubusercontent.com/85759378/161845820-c9c133f4-738e-4d04-8040-8b77badc6e33.png)
-
-A simple rock, paper, scissors game Avengers based. My first version was built using HTML, CSS and JS and this is developed with REACT. 
-
-Just click on the rock, paper or scissors character and the system will random an enemy character to battle with you.
-The first to arrive to 5 victories will win the battle!
->>>>>>> 760243de093cdd2a171ed57e2c1af2b6f1e50cc8
