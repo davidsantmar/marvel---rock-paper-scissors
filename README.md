@@ -8,4 +8,4 @@ Just click on the rock, paper or scissors character and the system will random a
 The first to arrive to 5 victories will win the battle!
 
 Link to app deployed
-https://marvel-rockpaperscissors.web.app/
+<href src='https://marvel-rockpaperscissors.web.app/'>
