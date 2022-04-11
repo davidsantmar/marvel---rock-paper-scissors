@@ -6,4 +6,6 @@ A simple rock, paper, scissors game Avengers based. My first version was built u
 
 Just click on the rock, paper or scissors character and the system will random an enemy character to battle with you.
 The first to arrive to 5 victories will win the battle!
->>>>>>> 760243de093cdd2a171ed57e2c1af2b6f1e50cc8
+
+Link to app deployed
+https://marvel-rockpaperscissors.web.app/
