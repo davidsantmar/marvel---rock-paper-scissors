@@ -219,7 +219,6 @@ footer{
   .scissors--vertical, .rock--vertical{
     background-position: right top;
   }
-
   .paper--computer--vertical, .scissors--computer--vertical, .rock--computer--vertical{
     height: 29rem;
     width: 9rem;
@@ -289,8 +288,6 @@ footer{
     width: 14rem;
   }
 }
-
-
 @media (max-width: 600px){
   .header{
     justify-content: center;
@@ -357,12 +354,15 @@ footer{
   }
   .paper--computer--vertical, .scissors--computer--vertical, .rock--computer--vertical{
     height: 30.5rem;
-    width: 12rem;
+    width: 9.5rem;
   }
   .paper--computer--vertical{
     background-position: center;
   }
   .scissors--computer--vertical{
     background-position: center;
+  }
+  .footer--container{
+    margin-top: 0rem;
   }
 }
