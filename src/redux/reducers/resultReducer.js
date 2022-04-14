@@ -4,12 +4,17 @@ import youLoseSound from '../sounds/you-lose.mp3';
 import drawSound from '../sounds/draw.mp3';
 import youWinPerfectSound from '../sounds/you-win-perfect.mp3';
 import loseSound from '../sounds/lose.mp3';
+import avengersSound from '../sounds/avengers.mp3';
+
 
 function resultReducer(result = '', action) {
+
   switch (action.type) {
     case resultActionTypes.YOU_WIN:
       document.getElementById('result').style.backgroundColor = 'lightgreen';
       const youWin = new Audio(youWinSound);
+      const actionSound = new Audio(avengersSound);
+      actionSound.play();
       youWin.play(); 
       return result = 'YOU WIN';
     case resultActionTypes.YOU_LOSE:
