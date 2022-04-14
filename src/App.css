@@ -211,17 +211,27 @@ footer{
     font-size: 2.3rem;
     height: 100%;
   }
-  .rock--vertical, .paper--vertical, .scissors--vertical{
-    height: 29rem;
-    width: 9rem;
-    margin-right: 1rem;
+  .player--container--vertical{
+    flex-wrap: wrap;
+    flex-direction: column;
   }
-  .scissors--vertical, .rock--vertical{
-    background-position: right top;
+  .rock--vertical, .paper--vertical, .scissors--vertical{
+    height: 18rem;
+    width: 20rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+  .rock--vertical{
+    background-position: center;
+    margin-bottom: 1rem;
+  }
+  .scissors--vertical{
+    background-position: top;
+    margin-bottom: 0rem; 
   }
   .paper--computer--vertical, .scissors--computer--vertical, .rock--computer--vertical{
-    height: 29rem;
-    width: 9rem;
+    height: 57rem;
+    width: 20rem;
   }
   .paper--computer--vertical, .scissors--computer--vertical{
     background-position: center;
@@ -279,6 +289,7 @@ footer{
   }
   .scissors--vertical{
     margin-bottom: 0;
+    background-position: top;
   }
   .rock--vertical{
     background-position: center;
@@ -288,8 +299,9 @@ footer{
     width: 14rem;
   }
 }
-@media (max-width: 600px){
+@media (max-width: 680px){
   .header{
+    display: flex;
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
@@ -315,7 +327,6 @@ footer{
     display: flex;
     justify-content: center;
     width: 50%;
-    margin-left: 2rem;
     height: 3rem;
     flex-direction: row;
     width: 20rem;
@@ -356,10 +367,7 @@ footer{
     height: 30.5rem;
     width: 9.5rem;
   }
-  .paper--computer--vertical{
-    background-position: center;
-  }
-  .scissors--computer--vertical{
+  .paper--computer--vertical, .scissors--computer--vertical{
     background-position: center;
   }
   .footer--container{
