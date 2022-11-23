@@ -2,11 +2,17 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='footer--container'>
-            <footer data-testid="footerText">
-                &nbsp;MADE WITH &#10084;&#65039; BY DAVID SANTIA<span className='go--container'>GO</span>!&nbsp;
-            </footer>
-        </div>
+        <footer data-testid='footerText'>
+            <a  className='footer__link' href='http://dasan-dev.web.app' target='blank'>
+                Performed by David Santia
+                <span className='go--container'>
+                    GO
+                </span>!&nbsp;
+                <sup>
+                    &#169;
+                </sup>
+            </a>
+        </footer>
     );
 };
 

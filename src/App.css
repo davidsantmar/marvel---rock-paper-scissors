@@ -136,19 +136,20 @@ body{
   width: 15rem;
   height: 30rem;
 }
-.footer--container{
-  display: flex;
-  justify-content: center;
-  margin: .5rem;
-}
 footer{
   font-size: 1rem;
   border-radius: 5px;
   background-color: white;
+  text-align: center;
+  font-size: .5rem;
+}
+.footer__link{
+  text-decoration: none;
 }
 .go--container{
   color: #ED1D24;
 }
+
 @media (max-width: 1200px){
   .paper--vertical, .scissors--vertical, .rock--vertical{
     width: 12rem;
@@ -369,8 +370,5 @@ footer{
   }
   .paper--computer--vertical, .scissors--computer--vertical{
     background-position: center;
-  }
-  .footer--container{
-    margin-top: 0rem;
   }
 }
