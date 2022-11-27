@@ -137,11 +137,16 @@ body{
   height: 30rem;
 }
 footer{
-  font-size: 1rem;
-  border-radius: 5px;
-  background-color: white;
-  text-align: center;
+  color: black;
   font-size: .5rem;
+  background: linear-gradient(to left, #9bbfeb, #ED1D24);
+  text-align: center;
+  padding: 1rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 .footer__link{
   text-decoration: none;
@@ -149,7 +154,13 @@ footer{
 .go--container{
   color: #ED1D24;
 }
-
+@supports (-webkit-touch-callout: none){
+  /* CSS specific to iOS devices */ 
+  footer{
+      position: relative;
+      bottom: 0;
+  }
+}
 @media (max-width: 1200px){
   .paper--vertical, .scissors--vertical, .rock--vertical{
     width: 12rem;

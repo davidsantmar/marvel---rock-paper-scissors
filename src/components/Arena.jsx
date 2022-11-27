@@ -3,10 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { computerWins, computerReset } from '../redux/actions/computerScoreActionCreator';
 import { playerWins, playerReset } from '../redux/actions/playerScoreActionCreator';
 import { youWin, youLose, draw, computerWon, playerWon } from '../redux/actions/resultActionCreator';
+import avengersSound from '../redux/sounds/avengers.mp3';
+
 
 const Arena = () => {
     const [weapon, setWeapon] = useState('');
     const [computer, setComputer] = useState('');
+    const [avengersPlaying, setAvengersPlaying] = useState(0);
+    const [soundLoop, setSoundLoop] = useState(0);
     const computerScore = useSelector((state) => state.computerScore);
     const playerScore = useSelector((state) => state.playerScore);
     const dispatch = useDispatch();
@@ -49,6 +53,7 @@ const Arena = () => {
         }  
         clearWeapon();
         maxScore();
+        bso();
     }
     function clearWeapon(){
         setWeapon('');
@@ -106,9 +111,23 @@ const Arena = () => {
         document.getElementById('rock--choose').style.border = 'solid 1px black';
         computerSelection();
     }
+    function bso(){
+        //const actionSound = new Audio(avengersSound);
+        if (playerScore === 1){
+            setAvengersPlaying(1);
+            if(avengersPlaying === 0 && soundLoop === 0){
+                //actionSound.play();
+                document.getElementById('beep').muted = false;
+                document.getElementById('beep').play();
+                setSoundLoop(1);
+            }
+        }else{
+            setAvengersPlaying(0);
+        }
+    }
     return (
         <>
-        <audio id="audio" src="../src/components/avengers.mp3" loop="loop" data-testid='audio'></audio>
+        <audio id="beep" src={avengersSound} autoPlay muted />
         <div className='arena--vertical'>
             <div className='player--container--vertical' data-testid='playerContainer'>
                 <div className='rock--vertical' id='rock--choose' onClick={chosenRock}>
