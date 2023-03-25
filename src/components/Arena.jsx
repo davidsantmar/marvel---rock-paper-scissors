@@ -39,7 +39,8 @@ const Arena = () => {
         if ((weapon === 'paper') && (computer === 'rock')){
             dispatch(playerWins());
             dispatch(youWin());
-        }
+
+      }
         if ((weapon === 'scissors') && (computer === 'scissors')){
             dispatch(draw());
         }
@@ -50,7 +51,7 @@ const Arena = () => {
         if ((weapon === 'scissors') && (computer === 'paper')){
             dispatch(playerWins());
             dispatch(youWin());
-        }  
+       }  
         clearWeapon();
         maxScore();
         bso();
@@ -112,11 +113,9 @@ const Arena = () => {
         computerSelection();
     }
     function bso(){
-        //const actionSound = new Audio(avengersSound);
         if (playerScore === 1){
             setAvengersPlaying(1);
             if(avengersPlaying === 0 && soundLoop === 0){
-                //actionSound.play();
                 document.getElementById('beep').muted = false;
                 document.getElementById('beep').play();
                 setSoundLoop(1);
@@ -125,6 +124,7 @@ const Arena = () => {
             setAvengersPlaying(0);
         }
     }
+ 
     return (
         <>
         <audio id="beep" src={avengersSound} autoPlay muted />

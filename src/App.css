@@ -141,18 +141,18 @@ footer{
   font-size: .5rem;
   background: linear-gradient(to left, #9bbfeb, #ED1D24);
   text-align: center;
-  padding: 1rem;
+  padding: .5rem;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 98%;
 }
 .footer__link{
   text-decoration: none;
 }
 .go--container{
-  color: #ED1D24;
+    color: #ED1D24;
 }
 @supports (-webkit-touch-callout: none){
   /* CSS specific to iOS devices */ 
@@ -199,9 +199,6 @@ footer{
   }
   .scissors--vertical, .rock--vertical{
     background-position: right;
-  }
-  .footer--container{
-    margin-top: 2rem;
   }
 }
 @media (max-width: 900px){
