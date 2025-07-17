@@ -4,9 +4,9 @@ const Footer = () => {
     return (
         <footer id='footer'>
             <a  className='footer__link' href='http://dasan-dev.web.app' target='blank'>
-                Developed by David Santia
+                Developed by Dasan-
                 <span className='go--container'>
-                    GO
+                    DEV
                 </span>!&nbsp;
                 <sup>
                     &#169;

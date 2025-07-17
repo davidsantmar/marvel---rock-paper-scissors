@@ -14,6 +14,21 @@ const Arena = () => {
     const computerScore = useSelector((state) => state.computerScore);
     const playerScore = useSelector((state) => state.playerScore);
     const dispatch = useDispatch();
+    //where earlier you did:
+    var audiosWeWantToUnlock = []
+    audiosWeWantToUnlock.push(new Audio(avengersSound))
+    //audiosWeWantToUnlock.push(new Audio('myOtherSoundEffect.wav'))
+    document.body.addEventListener('touchstart', function() {
+        if(audiosWeWantToUnlock) {
+         for(let audio of audiosWeWantToUnlock) {
+          audio.play()
+          audio.pause()
+          audio.currentTime = 0
+         }
+         audiosWeWantToUnlock = null
+       }
+       }, false)
+       
     useEffect(() => {
         battle();
     }, [weapon]);
@@ -39,8 +54,7 @@ const Arena = () => {
         if ((weapon === 'paper') && (computer === 'rock')){
             dispatch(playerWins());
             dispatch(youWin());
-
-      }
+        }
         if ((weapon === 'scissors') && (computer === 'scissors')){
             dispatch(draw());
         }
@@ -55,6 +69,7 @@ const Arena = () => {
         clearWeapon();
         maxScore();
         bso();
+        audiosWeWantToUnlock[0].play();
     }
     function clearWeapon(){
         setWeapon('');
