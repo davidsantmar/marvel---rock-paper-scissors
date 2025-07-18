@@ -1,9 +1,10 @@
 import React from 'react';
 import logo from '../images/logo.png';
 import Score from './Score'
-import Result from './Result';
+import { useSelector } from "react-redux";
 
 const Header = () => {
+    const result = useSelector((state) => state.result);
     return (
         <div className='header'>
                 <div className="logo--container">
@@ -13,7 +14,9 @@ const Header = () => {
                     <span className='subtitle' data-testid='subtitle'>ROCK PAPER SCISSORS</span>
                 </div>
                 <div className='result' id='result' data-testid='result'>
-                    <Result />
+                    <div className='result--container' data-testid='resultContainer'>
+                        {result}
+                    </div>
                 </div>
             <div className='score--container' data-testid='scoreContainer'>
                 <Score />

@@ -28,11 +28,9 @@ firebase.initializeApp(firebaseConfig);
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
           <Header />
           <Arena />
           <Footer />
-      </div>
     </Provider>
   );
 }
